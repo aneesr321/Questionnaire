@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Questionnaire</title>
+</head>
+<body>
+<h1>Questionnaire</h1>
+    
+    <form id="questionnaireForm">
+        <p>1. What is your name?</p>
+        <input type="text" id="name" required>
+
+        <p>2. What is your favorite color?</p>
+        <input type="text" id="color" required>
+
+        <p>3. What is your hobby?</p>
+        <input type="text" id="hobby" required>
+
+        <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            // Gather answers
+            var name = document.getElementById('name').value;
+            var color = document.getElementById('color').value;
+            var hobby = document.getElementById('hobby').value;
+
+            // Simple validation
+            if (name && color && hobby) {
+                // Prompt the user
+                var confirmation = confirm("Are you ready to submit your answers?");
+                if (confirmation) {
+                    // If confirmed, you can proceed with further action (e.g., form submission, navigation, etc.)
+                    alert("Thank you, " + name + "! Your favorite color is " + color + " and you enjoy " + hobby + ".");
+                    // You can redirect to another page or submit the form to a server here
+                }
+            } else {
+                alert("Please answer all questions before submitting.");
+            }
+        }
+    </script>
+</body>
+</html>
